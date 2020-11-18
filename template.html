@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <!--<script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>-->
+    </head>
+    <body>
+      
+       <button class="open-button" id="open_button" onclick="openForm()">Open Form</button><!--for cashflow-->
+      
+      <button class="open_bidChecklist" id="open_bidChecklist">Open bid form</button><!--for bid checklist-->
+      
+<!--***********************************cash flow*****************************************************************************************-->
+     
+      
+<div class="form-popup" id="myForm"></br>
+<div id="Financial_Feasibility" class="tabcontent1" style="overflow-x:auto;">
+    <center><h2>Cash Flow</h2></center></br>
+   
+    <!--<input  style="float:right; margin-right: 10px;" id="row_add_one" name="one" placeholder="Enter Stage Name"/></span>  <input  style="float:right; margin-right: 10px;" id="row_add_two" name="two" placeholder="Enter Milestones"/></span>  <input  style="float:right; margin-right: 10px;" id="row_add_three" name="third" placeholder="Enter Expenditure Type"/></span></br> &nbsp &nbsp-->
+  
+        <div id="mtwenty">
+            <form>
+              
+           <table style="width:100%">
+                  <tr>
+                    <th width="20%">Start Year</th>
+                    <th width="20%">Start Quarter</th>
+                    <th width="20%">End Year</th>
+                    <th width="20%">End Quarter</th>
+                    <th width="20%">Number of Bidders</th>
+                  </tr>
+                  
+                  <tr>
+                    
+                    <td><center>
+                      <select name="startYear" id="startYear">
+                        <option></option>
+                      </select></center>
+                      </td>
+                      
+                    <td> <center><select name="start_quarter" id="start_quarter">
+                          <option value="Q1">Q1</option>
+                          <option value="Q2">Q2</option>
+                          <option value="Q3">Q3</option>
+                          <option value="Q4">Q4</option>
+                          </select></center>
+                      </td>
+                    <td><center>
+                      <select name="endYear" id="endYear">
+                        <option></option>
+                      </select></center>
+                      
+                      </td>
+                      
+                       <td><center> <select name="end_quarter" id="end_quarter">
+                          <option value="Q1">Q1</option>
+                          <option value="Q2">Q2</option>
+                          <option value="Q3">Q3</option>
+                          <option value="Q4">Q4</option>
+                          </select></center>
+                      </td>
+                      
+                     <td><center>
+                       <input name="bid" id="bid" type="text"/></center>
+                       </td>
+                       
+                  </tr>
+                  
+                </table></br>
+          
+           
+           <center><input type="button" class="btn button" id="first_form" value="Submit"><input type="button" class="btn button" id="reset" value="Reset"></center>&nbsp &nbsp
+           
+           </form>
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Year</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><center><b>Project Value in Rs</b></center></td>
+                  <td><center><input required name="year" type="text"/><center></td>
+                  <td><center><input required name="year_total" type="text" readonly/><center></td>
+                </tr>
+              </tbody>
+            </table>
+           </div> 
+     
+  
+     
+  <!--<div class="input" style="width: 20px; height: 25px; display:flex; justify-content: space-between; " ></div>-->
+<!--  <table style="width:80%">-->
+<!--  <tr id="year_row">-->
+<!--    <th>Year</th>-->
+    <!--<td id="years"></td>-->
+    <!--<td>Jill</td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <th>Project Value in RS</th>-->
+<!--    <td></td>-->
+<!--    <td></td>-->
+<!--  </tr>-->
+  
+<!--</table>-->
+ 
+  
+    
+    <form name="fc" class="all_forms_validation" id="input_change" style=" margin-top: 5px; ">
+       <!--<span><button  style="float:right;" type="button" id="profi" class="btn td_profit_and_loss button">Insert Column</button> <input  style="float:right; margin-right: 10px;" id="profit" name="justCheck" placeholder="Enter Column Name"/></span></br> &nbsp &nbsp-->
+      </br>
+      <!--<p style="color: red; text-align: center;">All fields are mandatory * </p></br>-->
+      
+    <table style="text-align: center;" class= "columnIns" id="mtenth">
+      <thead>
+        <tr style="text-align: center;">
+            <th></th>
+            <th class="ExportLabelTD">S No</th>
+            <th>Stage</th>
+            <th>Milestones</th>
+            <th>Type of Expenditure</th>
+            <th>Quarter</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="cash_flow">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              1
+          </td>
+          <td >
+              Pre-Tender
+          </td>
+          <td >
+              Tender Publishing
+          </td>
+          <td >
+              Expense
+          </td>
+          <td>
+            <input class="row_add col_add" required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              2
+          </td>
+          <td >
+              Post-Tender
+          </td>
+          <td >
+              Tender Fee per Bidder
+          </td>
+          <td >
+              Expense
+          </td>
+          <td>
+            <input class="row_add col_add" required name="TenderFee" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              3
+          </td>
+          <td >
+              Post-Tender
+          </td>
+          <td >
+              EMD
+          </td>
+          <td >
+              Returnable
+          </td>
+          <td>
+            <input class="row_add col_add" required name="EMD" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              4
+          </td>
+          <td >
+              Agreement Stage
+          </td>
+          <td >
+              Work Order Receipt (PBG)
+          </td>
+          <td >
+              Returnable
+          </td>
+          <td>
+            <input class="row_add col_add"  required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              5
+          </td>
+          <td >
+              Agreement Stage
+          </td>
+          <td >
+              Agreement Signing
+          </td>
+          <td >
+                --
+          </td>
+          <td>
+            <input class="row_add col_add" required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              6
+          </td>
+          <td >
+              Project GO-Live
+          </td>
+          <td class="Col3">
+              Marketing Expenses
+          </td>
+          <td >
+              Expense
+          </td>
+          <td>
+            <input class="row_add col_add"  required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              7
+          </td>
+          <td >
+              Project GO-Live
+          </td>
+          <td >
+              Capex Procurement
+          </td>
+          <td >
+              Expense
+          </td>
+          <td>
+            <input class="row_add col_add" required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              8
+          </td>
+          <td >
+              Project GO-Live
+          </td>
+          <td >
+              Capex Reimbursement from NMMC
+          </td>
+          <td >
+              Income
+          </td>
+          <td>
+            <input class="row_add col_add" required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              9
+          </td>
+          <td >
+              Project GO-Live
+          </td>
+          <td >
+              Opex Expenses
+          </td>
+          <td >
+              Expense
+          </td>
+          <td>
+            <input class="row_add col_add" required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+          <td class="ExportLabelTD"></td>
+          <td class="ExportLabelTD">
+              10
+          </td>
+          <td >
+              Project GO-Live
+          </td>
+          <td >
+              Quarterly Opex Receipt
+          </td>
+          <td >
+              Income
+          </td>
+          <td>
+            <input  class="row_add col_add" required name="" type="number"/>
+          </td>
+        </tr>
+        <tr class="addition">
+           <td class="ExportLabelTD"><a class=" remove-row pull-right pointer"><i class="glyphicon glyphicon-trash"></i></a></td>
+          <td class="ExportLabelTD">
+            11
+          </td>
+          <td>
+      <input required name="Other_three1"   type="text" placeholder="Other(Please  Specify )"  />
+          </td><td>
+      <input required name="Other_three1"   type="text" placeholder="Other(Please  Specify )"  />
+          </td><td>
+      <input required name="Other_three1"   type="text" placeholder="Other(Please  Specify )"  />
+          </td>
+          <td>
+            <input class="row_add col_add"  required name="" type="number"/>
+          </td>
+        </tr>
+         </tbody>
+         
+        <tfoot>
+        <tr id="tot">
+          <td class="ExportLabelTD"></td>
+          <td >
+              
+          </td>
+          <td >
+              
+          </td>
+          <td >
+              Total
+          </td>
+          <td >
+             
+          </td>
+          <td>
+            <input class="total" required name="" type="text" readonly/>
+          </td>
+        </tr>
+        <tr id="cum">
+          <td class="ExportLabelTD"></td>
+          <td class="tdWidth" >
+              
+          </td>
+          <td class="tdWidth">
+              
+          </td>
+          <td class="tdWidth" >
+              Cumulative
+          </td>
+          <td >
+             
+          </td>
+          <td class="tdWidth">
+            <input  required name="" type="text" readonly/>
+          </td>
+        </tr>
+        
+     </tfoot>
+    </table></br>
+    &nbsp &nbsp &nbsp 
+     </br>
+     </br>
+      <span><button style="float:left;" type= "button" id="tenth" class="btn add_rows_cls button">Insert Row</button> </span></br>&nbsp &nbsp
+
+        </form>
+    
+   
+  </div>
+  </div>
+  
+  
+  <div>
+     <br>
+  </div>
+  <!--***********************************end of cash flow*****************************************************************************************-->
+  
+  <!--***********************************Bid Checklist*****************************************************************************************-->
+   
+
+    <div class="form-popup" id="bidChecklistForm"></br>
+    
+        <div id="Document_Checklist" class="tabcontent1" style="overflow-x:auto;">
+          <center><h2>Bid Check-List</h2></center>
+          <span><button style="float:right;" type="button" id="checks" class="button add_doc_col">Insert Column</button> 
+            <input style="float:right;" id="doc_col" name="checks" placeholder="Enter column Name"/></span>
+      
+        <form name="dc" class="all_forms_validation" id="doc_select">
+          <br>
+          <!--<p style="color:red; margin-left:10px;">All fields are mandatory * </p></br>-->
+        <table class="form-container doc_checks all_download_excel" id="mcheckst" export-excel-filename="Information Form.xls">
+          <thead>
+          <tr>
+            <th></th>
+            <th><center>Sr. No</center></th>
+            <th><center>Tender Requirement</center></th>
+              <th><center> Document to be Submitted</center></th>
+              <th><center>Comments</center></th>
+             </tr>
+            </thead>
+            <tbody>
+            <tr>
+               <td class="ExportLabelTD" ><a class="remove-row pull-right pointer"><i class="glyphicon glyphicon-trash"></i></a></td>
+              <td class="ExportLabelTD">1</td>
+              <td>
+               <textarea rows="1" cols="30"  class="for_info_popup txtarea" required name="Tender_Requirement"   type="text"></textarea>
+              </td>
+               <td>
+                <textarea rows="1" cols="30"  class="for_info_popup txtarea" required name="Submitted"   type="text"></textarea>
+              </td>
+               <td>
+                <textarea rows="1" cols="30" class="for_info_popup txtarea" required name="Comments"   type="text"></textarea>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          </form>
+          </br>
+          <button type= "button" id="checkst" class="button add_rows_cls1">Add New Row</button></br>
+          </br></br></br>
+        </div>
+    </div>
+  
+  
+  <!--***********************************end of Bid Checklist*****************************************************************************************-->
+  <style>
+  
+  th{
+    text-align:center;
+  }
+  
+  
+   td{
+    width: 80px;
+    height: 55px;
+    padding:0 5px;
+    margin:0 5px;
+  }
+  
+  .ExportLabelTD{
+    width: 20px;
+    height: 55px;
+  }
+  
+  .txtarea {
+    width: auto;
+    /*min-width: max-content;*/
+    resize: both;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+  
+    .open-button{
+      display:none;
+    }
+    #myForm{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 5%;
+  padding-left: 11%;/* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    .tabcontent1{
+       background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  /*border: 1px solid #888;*/
+  width: 80%;
+    }
+    
+    .pointer {cursor: pointer;}
+    
+     .open_bidChecklist{
+      display:none;
+    }
+     #bidChecklistForm{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 5%;
+  padding-left: 11%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+  </style>
+   <script src="custom/modules/Opportunities/form.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
