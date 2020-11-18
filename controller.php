@@ -1,4 +1,7 @@
 <?php
+
+// controller for opportunity module in CRM
+
 if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 
 require_once('include/MVC/Controller/SugarController.php');
